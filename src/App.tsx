@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import birdImage from "./assets/taligar-bird-1905255.jpg";
+import LeftBirdImage from "./assets/left-bird.jpg";
+import RightBirdImage from "./assets/right-bird.jpg";
 import './App.css';
 
 // Define the expected shape of the joke response
@@ -58,12 +59,21 @@ function App() {
       <h1>Joking Birds</h1>
 
       {/* The bird container. The "talking" class is added when TTS is active. */}
-      <div className={"bird-container ${isSpeaking ? 'talking' : ''}"}>
-        <img 
-          src={birdImage}
-          alt="A funny bird"
-          className="bird-img"
-        />
+      <div className="birds-row">
+        <div className={`bird-container ${isSpeaking ? 'talking' : ''}`}>
+          <img 
+            src={LeftBirdImage}
+            alt="A funny bird"
+            className="bird-img"
+          />
+        </div>
+        <div className={`bird-container ${isSpeaking ? 'talking' : ''}`}>
+          <img
+            src={RightBirdImage}
+            alt="A funnier bird"
+            className="bird-img"
+          />
+        </div>
       </div>
 
       <div className="joke-box">
