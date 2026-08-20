@@ -1,0 +1,82 @@
+#root {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: system-ui, -apple-system, sans-serif;
+  padding: 2rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.bird-container {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  border: 5px solid #FFF;
+  transition: transform 0.2s ease;
+}
+
+.bird-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform-origin: bottom center;
+}
+
+.talking .bird-img {
+  animation: squawk 0.25s infinte alterante ease-in-out;
+}
+
+@keyframes squawk {
+  0% {
+    transform: scaleY(1) translateY(0);
+  }
+  100% {
+    transform: scaleY(0.92) translateY(-8px);
+  }
+}
+
+.joke-box {
+  min-height: 80px;
+  padding: 1.5rem;
+  background: #F0F0F0;
+  border-radius: 12px;
+  font-size: 1.25rem;
+  font-style: italic;
+  color: #333;
+  max-width: 500px;
+  width: 100%;
+}
+
+.controls {
+  display: flex;
+  gap: 1rem;
+}
+
+button {
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  background-color: #646CFF;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover:not(:disabled) {
+  background-color: #535BF2;
+}
+
+button:disabled {
+  background-color: #A0A0A0;
+  cursor: not-allowed;
+}
